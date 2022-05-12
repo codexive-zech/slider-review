@@ -259,7 +259,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: all 3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   opacity: 0;
 }
 
@@ -268,10 +268,8 @@ h4 {
   transform: translate(0);
 }
 .slide.next {
-  opacity: 1;
   transform: translate(100%);
 }
 .slide.last {
-  opacity: 1;
   transform: translate(-100%);
 }
