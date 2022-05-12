@@ -70,9 +70,31 @@ const startSlider = (type) => {
   last.classList.remove(['last']);
   next.classList.remove(['next']);
 
+  if (type === 'prev') {
+    // adding each classes to elements by their side, swapping classes
+    // when clicked the active element will be next
+    active.classList.add('next');
+    // when clicked the last element will be active
+    last.classList.add('active');
+    // getting the previous element after last and setting it as next
+    next = last.previousElementSibling;
+    // if the is not more data for next in the people object array (first person review in the people data) i.e when next is detail does not exist
+    if (!next) {
+      next = sliderContainer.lastElementChild;
+    }
+    // removing the class
+    next.classList.remove(['next']);
+    // when clicked the next element will be last
+    next.classList.add('last');
+    return;
+  }
+
   // adding each classes to elements by their side, swapping classes
+  // when clicked the active element will be last
   active.classList.add('last');
+  // when clicked the last element will be next
   last.classList.add('next');
+  // when clicked the next will be active
   next.classList.add('active');
 };
 
